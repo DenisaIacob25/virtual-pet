@@ -8,13 +8,13 @@ namespace VirtualPet
 {
     class VirtualPet
     {
-        //declaring fields
+        //Declaring fields
         private string name;
         private int hunger;
         private int sick;
         private int bored;
 
-        //properties 
+        //Properties 
         public string Name
         {
             get { return this.name; }
@@ -40,77 +40,55 @@ namespace VirtualPet
 
         }
 
-        //constructors
-        //public VirtualPet()
-        //{
+        //Constructors
+        public VirtualPet(string name, int hunger, int sick, int bored)
+        {
 
-        //}
+        }
 
-        public VirtualPet ()
+        public VirtualPet()
         {
             this.name = Name;
             this.hunger = 40;
             this.sick = 20;
             this.bored = 60;
-            
+
         }
 
-        //methods
+        //Methods
 
-        //hunger
+        //hunger - feed
         public void HungerLevel()//if feed is selected from menu
         {
-            hunger=hunger+5;
+            this.Hunger = this.hunger + 5;
         }
-        //public int HungryPet()
-        //{
-        //    return hunger;
-        //}
-        //public void SetHappyPet(int Hunger)
-        //{
-        //    hunger = Hunger;
-        //}
 
-        //sick
+        //sick - heal
         public void SickLevel()//if heal is selected from menu
         {
-            sick=sick+5;
+            this.Sick = this.sick + 5;
+            this.Hunger = this.hunger + 4;
         }
-        //public int SickPet()
-        //{
-        //    return sick;
-        //}
-        //public void SetSickPet(int Sick)
-        //{
-        //    sick = Sick;
-        //}
 
-        //method bored
+        //bored - play
         public void BoredLevel()//if play is selected from menu
         {
-            bored = bored -6;
+            this.Bored = this.bored - 6;
         }
-        //public int BoredPet()
-        //{
-        //    return bored;
-        //}
-        //public void SetBoredPet(int Bored)
-        //{
-        //    bored = Bored;
-        //}
 
-        //method for health
+        //method for stats of virtual pet
         public void PenguinHealth()
         {
             Console.WriteLine(Name);
-            Console.WriteLine("Hunger: " + this.bored);
-            Console.WriteLine("Health: " + this.sick);
-            Console.WriteLine("Boredom: " + this.bored);
+            Console.WriteLine("Hunger: " + Hunger);
+            Console.WriteLine("Health: " + Sick);
+            Console.WriteLine("Boredom: " + Bored);
         }
+
         //method exit game
         public void QuitGame()
         {
-           
+
             Console.Clear();
             Environment.Exit(0);
         }
@@ -123,6 +101,7 @@ namespace VirtualPet
             bored = bored + 2;
         }
 
+        //ascii art
         public void PenguinArt()
         {
             Console.WriteLine("\n");
@@ -130,8 +109,8 @@ namespace VirtualPet
             Console.WriteLine("//\\");
             Console.WriteLine("V_/_");
             Console.WriteLine("\n");
-
         }
-
+        
+        
     }
 }
